@@ -187,25 +187,26 @@ def user_stats(df):
     .format(earliest, most_recent, common))
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
-
+def several_data(df):
+    validation = False
+    while not validation:
+        row_data = str(input("Befor moving to Displays statistics of the data, \n do you would  to display rows from the data? \n Please type yes or no"))
+        if row_data.lower() == 'yes' or row_data.lower() == 'no':
+            validation = True
+    start_point = 0
+    end_point = 5
+    while row_data.lower() == 'yes':
+        print(df[start_point:end_point])
+        start_point += 5
+        end_point +=5
+        row_data = str(input('Type yes to view more rows of the data, or press enter to move to the Statistics'))
 
 def main():
     while True:
         city, month, day = get_filters()
-        df = load_data(city, month, day)
-        validation = False
-        while not validation:
-            row_data = str(input("Befor moving to Displays statistics of the data, \n do you would  to display rows from the data? \n Please type yes or no"))
-            if row_data.lower() == 'yes' or row_data.lower() == 'no':
-                validation = True
-        start_point = 0
-        end_point = 5
-        while row_data.lower() == 'yes':
-            print(df[start_point:end_point])
-            start_point += 5
-            end_point +=5
-            row_data = str(input('Type yes to view more rows of the data, or press enter to move to the Statistics'))
+        df = load_data(city, month, day)        
 
+        several_data(df)
         time_stats(df)
         station_stats(df)
         trip_duration_stats(df)
