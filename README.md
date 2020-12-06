@@ -13,6 +13,7 @@ This project explores data related to bike share systems for three major cities 
 * new_york_city.csv
 * washington.csv
 * README.md
+* LICENSE.md
 ## Acknowledgements and credits
 * [Programming for Data Science with Python](https://www.udacity.com/course/programming-for-data-science-nanodegree--nd104 "Go to the course's page")
 * [Working with datetime in Pandas DataFrame](https://towardsdatascience.com/working-with-datetime-in-pandas-dataframe-663f7af6c587 "Go to the article's page")
